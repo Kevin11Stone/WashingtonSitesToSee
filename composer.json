@@ -1,0 +1,12 @@
+{
+  "name": "kevinsto/328/WashingtonSitesToSee",
+  "authors": [
+    {
+      "name": "Kevin Stone",
+      "email": "ruca6616@gmail.com"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
