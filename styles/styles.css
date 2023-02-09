@@ -1,0 +1,26 @@
+/* Washington Sites to See webpage styles */
+html {
+    background-color: #237723;
+}
+
+/* home page styles */
+ul.top-nav {
+    list-style-type: none;
+    background-color: #3b3b3b;
+}
+ul.top-nav li {
+    float: left;
+}
+ul.top-nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ul.top-nav li a:hover:not(.active) {
+    background-color: #111;
+}
+ul.top-nav li.right {
+    float: right;
+}
