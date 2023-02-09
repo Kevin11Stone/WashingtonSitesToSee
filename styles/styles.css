@@ -1,6 +1,6 @@
 /* Washington Sites to See webpage styles */
 html {
-    background-color: #237723;
+    background-color: #333;
 }
 body {
     min-height: 100vh;
@@ -9,7 +9,7 @@ body {
 }
 
 /* home page styles */
-ul.top-nav {
+ul#top-nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -17,40 +17,51 @@ ul.top-nav {
     background-color: #333;
     color: white;
 }
-ul.top-nav li {
+ul#top-nav li {
     float: left;
 }
-ul.top-nav li a {
+ul#top-nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-ul.top-nav li a:hover:not(.active) {
+ul#top-nav li a:hover:not(.active) {
     background-color: #111;
 }
-ul.top-nav li a.active {
+ul#top-nav li a.active {
     background-color: rgba(3, 113, 178, 0.96);
 }
-ul.top-nav li.right {
+ul#top-nav li.right {
     float: right;
 }
 @media screen and (max-width: 600px) {
-    ul.top-nav li.right,
-    ul.top-nav li {float: none;}
+    ul#top-nav li.right,
+    ul#top-nav li {float: none;}
 }
-.content {
-    /*padding: 50px 0;*/
+div.content {
+    padding-top: 50px;
+    border-radius: 20px;
 }
 ul.activities {
     list-style-type: none;
 }
+ul.activities li {
+    display: inline;
+}
 ul.activities li a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
 }
-.footer {
+#footer {
     margin-top: auto;
-    background-color: #111;
+    background-color: #237723;
     color: white;
+    padding: 50px 0;
+}
+#footer p {
+    text-align: center;
 }
