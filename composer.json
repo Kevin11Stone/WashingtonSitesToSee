@@ -6,6 +6,12 @@
       "email": "ruca6616@gmail.com"
     }
   ],
+  "authors": [
+    {
+      "name": "Michell Rodriguez",
+      "email": "rodriguez.michell@student.greenriver.edu"
+    }
+  ],
   "require": {
     "bcosca/fatfree-core": "dev-master"
   }
