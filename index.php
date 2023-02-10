@@ -55,6 +55,34 @@ $f3->route('GET|POST /signup', function () {
     echo $view->render('views/sign-up.html');
 });
 
+// Define a default route (328/WashingtonSitesToSee/food)
+$f3->route('GET|POST /food', function () {
+    // Instantiate a view
+    $view = new Template();
+    echo $view->render('views/food.html');
+});
+
+// Define a default route (328/WashingtonSitesToSee/music)
+$f3->route('GET|POST /music', function () {
+    // Instantiate a view
+    $view = new Template();
+    echo $view->render('views/music.html');
+});
+
+// Define a default route (328/WashingtonSitesToSee/nature)
+$f3->route('GET|POST /nature', function () {
+    // Instantiate a view
+    $view = new Template();
+    echo $view->render('views/nature.html');
+});
+
+// Define a default route (328/WashingtonSitesToSee/activities)
+$f3->route('GET|POST /activities', function () {
+    // Instantiate a view
+    $view = new Template();
+    echo $view->render('views/activities.html');
+});
+
 // run Fat Free
 $f3->run();
 

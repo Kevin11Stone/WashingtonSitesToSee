@@ -51,7 +51,7 @@ ul.activities li {
     display: inline;
 }
 ul.activities li a {
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
