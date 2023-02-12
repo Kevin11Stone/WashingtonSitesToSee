@@ -15,7 +15,6 @@ ul#top-nav {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    color: white;
 }
 ul#top-nav li {
     float: left;
@@ -41,7 +40,7 @@ ul#top-nav li.right {
     ul#top-nav li {float: none;}
 }
 div.content {
-    padding-top: 50px;
+    padding-top: 100px;
     border-radius: 20px;
 }
 ul.activities {
@@ -64,4 +63,22 @@ ul.activities li a {
 }
 #footer p {
     text-align: center;
+}
+
+/* SIGN-IN web page */
+#signinClass {
+    margin: 50px 0;
+}
+#signinClass h3{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+ }
+.left {
+    padding: 0 50px 0 0;
+    border-right: black solid 2px;
+    text-align: right;
+}
+.right {
+    padding: 0 0 0 50px;
 }

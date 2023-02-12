@@ -1,9 +1,33 @@
 <!-- sign-in route -> views/sign-in.html-->
 <include href="views/header.html"></include>
 
+<div id="signinClass">
+    <div class="row">
+        <div class="left col-md-6 col-12">
+            <h3>SIGN IN</h3>
+            <label for="signInEmail">email</label>
+            <br><input type="email" name="signInEmail" id="signInEmail">
 
+            <br><label for="signInpwd">password</label>
+            <br><input type="password" name="signInpwd" id="signInpwd">
+            <h6>Forgot password or username?</h6>
+        </div>
+        <div class="right col-md-6 col-12">
+            <h3>SIGN UP</h3>
+            <label for="firstName">First Name</label>
+            <br><input type="text" name="firstName" id="firstName">
 
-<!-- content here CREATE unique id for style purposes-->
+            <br><label for="lastName">Last Name</label>
+            <br><input type="text" name="lastName" id="lastName">
+
+            <br><label for="email">email</label>
+            <br><input type="email" name="email" id="email">
+
+            <br><label for="password">password</label>
+            <br><input type="password" name="password" id="password">
+        </div>
+    </div>
+</div>
 
 <!-- FOOTER -->
 <include href="views/footer.html"></include>
