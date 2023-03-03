@@ -15,7 +15,8 @@ class Controller
         $newUser = new User();
         $newUser->setFirstName("Ozzy");
 
-        // create Destination array
+        // test code making sure objects are being stored in the
+        // SESSION array correctly
         $firstDestination = new Destination();
         $secondDestination = new Destination();
 

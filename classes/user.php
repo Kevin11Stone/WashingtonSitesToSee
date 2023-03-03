@@ -19,7 +19,7 @@ class User
         $this->_email = "";
         $this->_state = "";
         $this->_phoneNumber = "";
-        $this->_destinationList = array();
+        $this->_destinationList = array(); // array of type Destination
 
     }
 
