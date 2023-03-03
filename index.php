@@ -3,28 +3,30 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// start a session
-session_start();
-
 // require autoload file
 require_once('vendor/autoload.php');
+
+// start a session
+session_start();
 
 // instantiate F3 base class
 $f3 = Base::instance();
 
+//instantiate a Controller object
+$con = new Controller($f3);
+
 // define a default route (328/home)
 $f3->route('GET /', function () {
 
-    // instantiate a view
-    $view = new Template();
-    echo $view->render("views/home.html");
+    // use Controller class here
+    $GLOBALS['con']->home();
 });
 
 // Define a default route (328/home) ---> this one is used to go back to homepage
 $f3->route('GET|POST /home', function () {
-    // Instantiate a view
-    $view = new Template();
-    echo $view->render('views/home.html');
+
+    // use Controller class here
+    $GLOBALS['con']->home();
 });
 
 // Define a default route (328/about)
