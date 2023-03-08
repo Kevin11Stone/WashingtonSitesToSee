@@ -2,9 +2,81 @@
 <!-- food route -> views/food.html-->
 <include href="views/header.html"></include>
 
+<div class="container">
 
-<h1>Food Page</h1>
+    <h1>Food Page</h1>
 
+    <div id="Extras">
+        <p class="text-center"><em>Please select any place that you are interested in:</em></p>
+    </div>
+
+    <form class="center" id="extrasForm"  name="extrasForm" action="Reserve.php"  onsubmit="return formValidation()" method="post">
+        <br>
+        <div class="row">
+            <div class="col">
+                <label><input type="checkbox" name="el_rinconsito" value="El Rinconsito Restaurant">
+                    <strong> Le Coin</strong> <br> <strong>Category:</strong> French American <br>
+                    <strong>Description:</strong> Le Coin is a modern French American Restaurant located
+                    in the Upper Fremont neighborhood of Seattle <br> <strong>Address:</strong>
+                    4201 Fremont Ave N, Seattle, WA 98103
+                </label>
+    <!--            find a way to make it next to the square-->
+            </div>
+
+            <div class="col">
+                <label><input type="checkbox" name="le_coin" value="Le Coin Restaurant">
+                    <strong> El Rinconsito</strong> <br> <strong>Category:</strong> Mexican <br>
+                    <strong>Description:</strong> lah lah lah <br> <strong>Address:</strong>
+                    lah lah lah</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <label><input type="checkbox" name="camino" value="El Camino Restaurant">
+                    <strong> El Camino</strong> <br> <strong>Category:</strong> Mexican <br>
+                    <strong>Description:</strong> lah lah lah <br> <strong>Address:</strong>
+                    lah lah lah
+                </label>
+            </div>
+
+            <div class="col">
+                <label><input type="checkbox" name="huckleberry" value="Huckleberry Square Restaurant">
+                    <strong> Huckleberry Square</strong> <br> <strong>Category:</strong> lah lah lah <br>
+                    <strong>Description:</strong> lah lah lah <br> <strong>Address:</strong>
+                    lah lah lah
+                </label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <label><input type="checkbox" name="beths_cafe" value="Beth's Cafe Restaurant">
+                    <strong> Beth's Cafe</strong> <br> <strong>Category:</strong> lah lah lah <br>
+                    <strong>Description:</strong> lah lah lah <br> <strong>Address:</strong>
+                    lah lah lah
+                </label>
+            </div>
+
+            <div class="col">
+                <label><input type="checkbox" name="dicks" value="Dick's Drive In">
+                    <strong> Dick's Drive In</strong> <br> <strong>Category:</strong> lah lah lah <br>
+                    <strong>Description:</strong> lah lah lah <br> <strong>Address:</strong>
+                    lah lah lah
+                </label>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <div class="col-6 col-md-4">
+            <input type="submit" value="Submit">
+<!--            <button class="button" onclick="submit">NEXT!</button>-->
+        </div>
+    </form>
+</div>
 
 
 <!-- FOOTER -->

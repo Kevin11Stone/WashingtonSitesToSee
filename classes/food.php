@@ -8,6 +8,7 @@ class Food extends Destination
     private $_type; // restaurant, bar, cafe, etc.
     private $_cuisine; // French, Chinese, Mexican, etc.
     private $_kidFriendly;
+
     function __construct()
     {
         $this->_type = "";
