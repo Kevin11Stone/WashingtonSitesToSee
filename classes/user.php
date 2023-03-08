@@ -72,6 +72,9 @@ class User
     // this array encompasses Destination objects
     public function setDestinationList($destinationObject)
     {
+        if($destinationObject == null) {
+            return;
+        }
         $this->_destinationList[] = $destinationObject;
     }
 }

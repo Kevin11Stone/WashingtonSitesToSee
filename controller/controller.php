@@ -11,33 +11,42 @@ class Controller
 
     function home()
     {
-        // create User object
-        $newUser = new User();
-        //$newUser->setFirstName("Ozzy");
-
-        // test code making sure objects are being stored in the
-        // SESSION array correctly
-//        $firstDestination = new Destination();
-//        $secondDestination = new Destination();
-//
-//        $firstDestination->setName("Lakewood");
-//        $secondDestination->setName("Puyallup");
-//
-//        $newFood = new Food();
-//        $newFood->setName("firstFoodObject");
-//
-//        $newUser->setDestinationList($firstDestination);
-//        $newUser->setDestinationList($secondDestination);
-//        $newUser->setDestinationList($newFood);
-
-
-        $_SESSION['newUser'] = $newUser;
-
-
-        //var_dump($_SESSION);
+        if( !isset($_SESSION['newUser']) ) {
+            // create User object upon viewing home page
+            $newUser = new User();
+            $_SESSION['newUser'] = $newUser;
+        }
 
         $view = new Template();
         echo $view->render("views/home.html");
+    }
+
+    function music()
+    {
+        //If the form has been submitted
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // create array of natureNames
+            $musicNameString  = isset($_POST['musicNames']) ?
+                implode(", ",$_POST['musicNames']) : "";
+            $musicNameArray = explode(", ", $musicNameString);
+
+            // for each food selected, create new nature object and add it to the User's
+            // destination list
+            foreach ($musicNameArray as $musicName) {
+                $newDestinationToAdd = new Destination();
+                $newDestinationToAdd->setName($musicName);
+                $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
+            }
+
+            //Redirect to summary page
+            $this->_f3->reroute('wishlist');
+        }
+
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/music.html');
+
     }
 
 
@@ -46,18 +55,76 @@ class Controller
         //If the form has been submitted
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            // create array of foodNames, for each foodName - newUser->setDestination(foodName)
+            // create array of foodNames
             $foodNameString  = isset($_POST['foodNames']) ?
                 implode(", ",$_POST['foodNames']) : "";
             $foodNameArray = explode(", ", $foodNameString);
 
-
+            // for each food selected, create new Food object and add it to the User's
+            // destination list
             foreach ($foodNameArray as $foodName) {
-                $newDestinationToAdd = new Destination();
+                $newDestinationToAdd = new Food();
                 $newDestinationToAdd->setName($foodName);
                 $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
             }
 
+            //Redirect to summary page
+            $this->_f3->reroute('wishlist');
+        }
+
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/food.html');
+
+    }
+
+
+    function nature()
+    {
+        //If the form has been submitted
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // add nature objects to User destination list
+            // create array of musicNames
+            $natureNameString  = isset($_POST['nature']) ?
+                implode(", ",$_POST['nature']) : "";
+            $natureNameArray = explode(", ", $natureNameString);
+
+            // for each food selected, create new music object and add it to the User's
+            // destination list
+            foreach ($natureNameArray as $natureName) {
+                $newDestinationToAdd = new Nature();
+                $newDestinationToAdd->setName($natureName);
+                $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
+            }
+
+            //Redirect to summary page
+            $this->_f3->reroute('wishlist');
+        }
+
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/nature.html');
+    }
+
+    function activities()
+    {
+        //If the form has been submitted
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // add activity objects to User destination list
+            // create array of activityNames
+            $activityNameString  = isset($_POST['activityNames']) ?
+                implode(", ",$_POST['activityNames']) : "";
+            $activityNameArray = explode(", ", $activityNameString);
+
+            // for each food selected, create new music object and add it to the User's
+            // destination list
+            foreach ($activityNameArray as $activityName) {
+                $newDestinationToAdd = new Nature();
+                $newDestinationToAdd->setName($activityName);
+                $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
+            }
 
             //Redirect to summary page
             $this->_f3->reroute('wishlist');
@@ -67,14 +134,12 @@ class Controller
 
         // Instantiate a view
         $view = new Template();
-        echo $view->render('views/food.html');
-
+        echo $view->render('views/activities.html');
     }
-
 
     function wishlist()
     {
-
+        // test vardump that we'll delete
         echo "<pre>";
         var_dump($_SESSION);
         echo "</pre>";
@@ -84,6 +149,6 @@ class Controller
         echo $view->render('views/wishlist.html');
 
         // destroy Session array
-        session_destroy();
+        //session_destroy();
     }
 }

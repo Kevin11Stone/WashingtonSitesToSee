@@ -67,22 +67,20 @@ $f3->route('GET|POST /food', function () {
 // Define a default route (328/WashingtonSitesToSee/music)
 $f3->route('GET|POST /music', function () {
     // Instantiate a view
-    $view = new Template();
-    echo $view->render('views/music.html');
+    // use Controller class here
+    $GLOBALS['con']->music();
 });
 
 // Define a default route (328/WashingtonSitesToSee/nature)
 $f3->route('GET|POST /nature', function () {
-    // Instantiate a view
-    $view = new Template();
-    echo $view->render('views/nature.html');
+    // use Controller class here
+    $GLOBALS['con']->nature();
 });
 
 // Define a default route (328/WashingtonSitesToSee/activities)
 $f3->route('GET|POST /activities', function () {
-    // Instantiate a view
-    $view = new Template();
-    echo $view->render('views/activities.html');
+    // use Controller class here
+    $GLOBALS['con']->activities();
 });
 
 // Define a default route (328/WashingtonSitesToSee/wishlist)
