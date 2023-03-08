@@ -66,7 +66,7 @@ class User
     public function getDestinationList()
     {
         foreach ($this->_destinationList as &$destinationObject) {
-            echo $destinationObject->getName();
+            echo $destinationObject->getName() . "<br>";
         }
     }
     // this array encompasses Destination objects
