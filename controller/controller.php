@@ -34,9 +34,30 @@ class Controller
         $_SESSION['newUser'] = $newUser;
 
 
-        var_dump($_SESSION);
+        //var_dump($_SESSION);
 
         $view = new Template();
         echo $view->render("views/home.html");
+    }
+
+
+    function food()
+    {
+
+
+
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/food.html');
+
+    }
+
+
+    function wishlist()
+    {
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/wishlist.html');
+
     }
 }

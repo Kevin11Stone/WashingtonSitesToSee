@@ -59,9 +59,9 @@ $f3->route('GET|POST /signup', function () {
 
 // Define a default route (328/WashingtonSitesToSee/food)
 $f3->route('GET|POST /food', function () {
-    // Instantiate a view
-    $view = new Template();
-    echo $view->render('views/food.html');
+
+    // use Controller class here
+    $GLOBALS['con']->food();
 });
 
 // Define a default route (328/WashingtonSitesToSee/music)
@@ -83,6 +83,14 @@ $f3->route('GET|POST /activities', function () {
     // Instantiate a view
     $view = new Template();
     echo $view->render('views/activities.html');
+});
+
+// Define a default route (328/WashingtonSitesToSee/wishlist)
+$f3->route('GET|POST /wishlist', function () {
+
+    // use Controller class here
+    $GLOBALS['con']->wishlist();
+
 });
 
 // run Fat Free
