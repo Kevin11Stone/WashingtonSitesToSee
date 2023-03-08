@@ -66,8 +66,9 @@ class User
     public function getDestinationList()
     {
         foreach ($this->_destinationList as &$destinationObject) {
-            echo $destinationObject->getName() . "<br>";
+            echo"- " . $destinationObject->getName() . "<br>";
         }
+        //return $this->_destinationList;
     }
     // this array encompasses Destination objects
     public function setDestinationList($destinationObject)
@@ -75,6 +76,66 @@ class User
         if($destinationObject == null) {
             return;
         }
+        if(in_array($destinationObject, $this->_destinationList)) {
+            return;
+        }
         $this->_destinationList[] = $destinationObject;
     }
+
+    public function getFoodList()
+    {
+        $_foodList = array();
+        foreach ($this->_destinationList as &$destinationObject) {
+            if( $destinationObject instanceof Food ){
+                $_foodList[] = $destinationObject;
+            };
+        }
+
+        foreach ($_foodList as &$foodObject) {
+            echo"- " . $foodObject->getName() . "<br>";
+        }
+        //return $_foodList;
+    }
+    public function getNatureList()
+    {
+        $_natureList = array();
+        foreach ($this->_destinationList as &$destinationObject) {
+            if( $destinationObject instanceof Nature ){
+                $_natureList[] = $destinationObject;
+            };
+        }
+
+        foreach ($_natureList as &$natureObject) {
+            echo"- " . $natureObject->getName() . "<br>";
+        }
+        //return $_natureList;
+    }
+    public function getActivityList()
+    {
+        $_activityList = array();
+        foreach ($this->_destinationList as &$destinationObject) {
+            if( $destinationObject instanceof Activity ){
+                $_activityList[] = $destinationObject;
+            };
+        }
+        foreach ($_activityList as &$activityObject) {
+            echo"- " . $activityObject->getName() . "<br>";
+        }
+        //return $_activityList;
+    }
+
+    public function getMusicList()
+    {
+        $_musicList = array();
+        foreach ($this->_destinationList as &$destinationObject) {
+            if( $destinationObject instanceof Music ){
+                $_musicList[] = $destinationObject;
+            };
+        }
+        foreach ($_musicList as &$musicObject) {
+            echo"- " . $musicObject->getName() . "<br>";
+        }
+        //return $_musicList;
+    }
+
 }
