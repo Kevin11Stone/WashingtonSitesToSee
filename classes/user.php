@@ -65,7 +65,9 @@ class User
     }
     public function getDestinationList()
     {
-        return $this->_destinationList;
+        foreach ($this->_destinationList as &$destinationObject) {
+            echo $destinationObject->getName();
+        }
     }
     // this array encompasses Destination objects
     public function setDestinationList($destinationObject)

@@ -2,10 +2,13 @@
 <include href="views/header.html"></include>
 
 <h1>
-    Wishlist page
+    My WishList
 </h1>
+<h2>
+    Destinations
+</h2>
 
-
+<p>{{ @SESSION.newUser->getDestinationList() }}</p>
 
 
 
