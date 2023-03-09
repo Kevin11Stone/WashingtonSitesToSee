@@ -1,5 +1,5 @@
 <?php
-// controller/controller.php
+// Controller class
 class Controller
 {
     private $_f3; // Fat-Free router
