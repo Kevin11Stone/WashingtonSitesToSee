@@ -78,6 +78,7 @@ ul.activities li a {
     padding: 0 50px 0 0;
     border-right: black solid 2px;
     text-align: right;
+    float: right;
 }
 .right {
     padding: 0 0 0 50px;
