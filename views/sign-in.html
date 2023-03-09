@@ -1,5 +1,6 @@
 <!-- sign-in route -> views/sign-in.html-->
 <include href="views/header.html"></include>
+<form action="#" method="post" class="form-horizontal">
 
 <div id="signinClass">
     <div class="row">
@@ -14,21 +15,50 @@
         </div>
         <div class="right col-md-6 col-12">
             <h3>SIGN UP</h3>
-            <label for="firstName">First Name</label>
-            <br><input type="text" name="firstName" id="firstName">
+            <div>
+                <label for="firstName">First Name</label>
+                <br><input type="text" name="firstName" id="firstName">
+                <check if="{{ isset(@errors['firstName'])}}">
+                    <span class="">{{ @errors['firstName'] }}</span>
+                </check><br>
+            </div>
 
-            <br><label for="lastName">Last Name</label>
-            <br><input type="text" name="lastName" id="lastName">
+            <div>
+                <br><label for="lastName">Last Name</label>
+                <br><input type="text" name="lastName" id="lastName">
+                <check if="{{ isset(@errors['lastName'])}}">
+                    <span class="">{{ @errors['lastName'] }}</span>
+                </check><br>
+            </div>
 
-            <br><label for="email">email</label>
-            <br><input type="email" name="email" id="email">
+            <div>
+                <br><label for="phone">phone</label>
+                <br><input type="phone" name="phone" id="phone">
+                <check if="{{ isset(@errors['phone'])}}">
+                    <span class="">{{ @errors['phone'] }}</span>
+                </check><br>
+            </div>
 
-            <br><label for="password">password</label>
-            <br><input type="password" name="password" id="password">
-            <br><input type="button" value="Creat an account !" onclick="location='https://stackoverflow.com/questions/21222227/html-button-redirect-on-click'">
+            <div>
+                <br><label for="email">email</label>
+                <br><input type="email" name="email" id="email">
+                <check if="{{ isset(@errors['email'])}}">
+                    <span class="">{{ @errors['email'] }}</span>
+                </check><br>
+            </div>
+
+            <div>
+                <br><label for="password">password</label>
+                <br><input type="password" name="password" id="password">
+                <check if="{{ isset(@errors['password'])}}">
+                    <span class="">{{ @errors['password'] }}</span>
+                </check><br>
+            </div>
+
+            <br><input type="button" value="Creat an account !" onclick="location='http://junnynoriega375.greenriverdev.com/328/WashingtonSitesToSee/home'">
         </div>
     </div>
 </div>
-
+</form>
 <!-- FOOTER -->
 <include href="views/footer.html"></include>
