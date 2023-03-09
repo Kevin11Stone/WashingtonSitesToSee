@@ -15,7 +15,6 @@ class Validate
     }
 
     static function validPassword($password) {
-        $password = test_input($password);
         if(!empty($password)) {
             if (strlen($password) <= 8) {
                 return "Your Password Must Contain At Least 8 Characters!";

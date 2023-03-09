@@ -4,12 +4,20 @@
     {
       "name": "Kevin Stone",
       "email": "ruca6616@gmail.com"
+    },
+    {
+      "name": "Michell Rodriguez",
+      "email": "michellrodriguezgo@gmail.com"
+    },
+    {
+      "name": "Junny Noriega-Arenas",
+      "email": "noriega-arenas.junny@student.greenriver.edu"
     }
   ],
   "require": {
     "bcosca/fatfree-core": "dev-master"
   },
   "autoload": {
-    "classmap": ["classes/", "controller/"]
+    "classmap": ["classes/","model/","controller/"]
   }
 }

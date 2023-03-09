@@ -83,3 +83,6 @@ ul.activities li a {
 .right {
     padding: 0 0 0 50px;
 }
+.right .err {
+    color: red;
+}

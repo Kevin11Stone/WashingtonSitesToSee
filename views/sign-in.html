@@ -1,8 +1,8 @@
 <!-- sign-in route -> views/sign-in.html-->
 <include href="views/header.html"></include>
-<form action="#" method="post" class="form-horizontal">
 
 <div id="signinClass">
+    <form action="#" method="post" class="form-horizontal">
     <div class="row">
         <div class="left col-md-6 col-12">
             <h3>SIGN IN</h3>
@@ -17,48 +17,50 @@
             <h3>SIGN UP</h3>
             <div>
                 <label for="firstName">First Name</label>
-                <br><input type="text" name="firstName" id="firstName">
+                <br><input type="text" name="firstName" id="firstName"><br>
                 <check if="{{ isset(@errors['firstName'])}}">
-                    <span class="">{{ @errors['firstName'] }}</span>
+                    <span class="err">{{ @errors['firstName'] }}</span>
                 </check><br>
             </div>
 
             <div>
-                <br><label for="lastName">Last Name</label>
-                <br><input type="text" name="lastName" id="lastName">
+                <label for="lastName">Last Name</label>
+                <br><input type="text" name="lastName" id="lastName"><br>
                 <check if="{{ isset(@errors['lastName'])}}">
-                    <span class="">{{ @errors['lastName'] }}</span>
+                    <span class="err">{{ @errors['lastName'] }}</span>
                 </check><br>
             </div>
 
             <div>
-                <br><label for="phone">phone</label>
-                <br><input type="phone" name="phone" id="phone">
+                <label for="phone">phone</label>
+                <br><input type="phone" name="phone" id="phone"><br>
                 <check if="{{ isset(@errors['phone'])}}">
-                    <span class="">{{ @errors['phone'] }}</span>
+                    <span class="err">{{ @errors['phone'] }}</span>
                 </check><br>
             </div>
 
             <div>
-                <br><label for="email">email</label>
-                <br><input type="email" name="email" id="email">
+                <label for="email">email</label>
+                <br><input type="email" name="email" id="email"><br>
                 <check if="{{ isset(@errors['email'])}}">
-                    <span class="">{{ @errors['email'] }}</span>
+                    <span class="err">{{ @errors['email'] }}</span>
                 </check><br>
             </div>
 
             <div>
-                <br><label for="password">password</label>
-                <br><input type="password" name="password" id="password">
+                <label for="password">password</label>
+                <br><input type="password" name="password" id="password"><br>
                 <check if="{{ isset(@errors['password'])}}">
-                    <span class="">{{ @errors['password'] }}</span>
+                    <span class="err">{{ @errors['password'] }}</span>
                 </check><br>
             </div>
+            <br><button class="btn btn-primary" type="submit" href="home">Next></button>
 
-            <br><input type="button" value="Creat an account !" onclick="location='http://junnynoriega375.greenriverdev.com/328/WashingtonSitesToSee/home'">
+<!--            <br><input type="button" value="Creat an account !" href="home">-->
         </div>
     </div>
+    </form>
 </div>
-</form>
+
 <!-- FOOTER -->
 <include href="views/footer.html"></include>

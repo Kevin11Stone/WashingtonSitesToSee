@@ -60,17 +60,10 @@ class Controller
 
     function signIn()
     {
-        // Instantiate a view
-        $view = new Template();
-        echo $view->render('views/sign-in.html');
-    }
-
-    function signUp()
-    {
         //If the form has been submitted
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $newUser = new User();
+            $newUserInfo = new User();
 
             //Move data from POST array to SESSION array
             $firstName = trim($_POST['firstName']);
@@ -80,13 +73,16 @@ class Controller
             $password = trim ($_POST['password']);
 
 
-            if (Validate::validFirstName($firstName) && Validate::validLastName($lastName) && Validate::validEmail($email) && Validate::validPhone($phone) && Validate::validPassword($password)) {
-                $newUser->setFname($firstName);
-                $newUser->setLname($lastName);
-                $newUser->setEmail($email);
-                $newUser->setPhone($phone);
-                $newUser->setPassword($password);
-
+            if (Validate::validFirstName($firstName) &&
+                Validate::validLastName($lastName) &&
+                Validate::validEmail($email) &&
+                Validate::validPhone($phone) &&
+                Validate::validPassword($password)) {
+                $newUserInfo->setFirstName($firstName);
+                $newUserInfo->setLastName($lastName);
+                $newUserInfo->setEmail($email);
+                $newUserInfo->setPhone($phone);
+                $newUserInfo->setPassword($password);
             }
             else {
                 $this->_f3->set('errors["firstName"]',
@@ -103,11 +99,20 @@ class Controller
 
             //Redirect to summary page
             if (empty($this->_f3->get('errors'))) {
-                $_SESSION['newUser'] = $newUser;
-                $this->_f3->reroute('experience');
+                $_SESSION['newUserInfo'] = $newUserInfo;
+                $this->_f3->reroute('home');
             }
         }
-    } // END of sign up
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/sign-in.html');
+    } // END of sign in
+    function signUp()
+    {
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/sign-up.html');
+    }
     function food() {
         // Instantiate a view
         $view = new Template();

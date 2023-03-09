@@ -10,6 +10,8 @@ class User
     private $_email;
     private $_state;
     private $_phone;
+    private $_password;
+
     private $_destinationList;
     // constructor
     function __construct()
@@ -19,6 +21,7 @@ class User
         $this->_email = "";
         $this->_state = "";
         $this->_phone = "";
+        $this->_password = "";
         $this->_destinationList = array();
 
     }
@@ -62,6 +65,14 @@ class User
     public function setState($state)
     {
         $this->_state = $state;
+    }
+    public function getPassword()
+    {
+        return $this->_password;
+    }
+    public function setPassword($password)
+    {
+        $this->_password = $password;
     }
     public function getDestinationList()
     {
