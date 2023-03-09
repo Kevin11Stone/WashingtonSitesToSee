@@ -54,8 +54,15 @@
                     <span class="err">{{ @errors['password'] }}</span>
                 </check><br>
             </div>
-            <br><button class="btn btn-primary" type="submit" href="home">Next></button>
 
+            <br><button class="btn btn-primary" type="submit" href="home">Next></button>
+            <div id="message">
+                <p>Password must contain the following:</p>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
 <!--            <br><input type="button" value="Creat an account !" href="home">-->
         </div>
     </div>
