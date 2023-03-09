@@ -1,25 +1,46 @@
 <?php
 /**
- * Nature class that inherits from Destination class
+ * Food class that inherits from Destination class
  */
 class Nature extends Destination
 {
     // private fields
-    private $_activity; // hiking, skiing, etc.
-
+    private $_natureType; // lake, mountain, beach, park.
+    private $_natureKidFriendly;  // is it kid friendly?
+    private $_natureFree; // is it free?
 
     function __construct()
     {
-        $this->_activity = "";
+        $this->_natureType = "";
+        $this->_natureKidFriendly = "";
+        $this->_natureFree = "";
     }
 
-    public function getActivity()
+    public function getNatureType()
     {
-        return $this->_activity;
+        return $this->_natureType;
     }
-    public function setActivity($activity)
+    public function setNatureType($natureType)
     {
-        $this->_type = $activity;
+        $this->_natureType = $natureType;
+    }
+
+    public function getNatureKidFriendly()
+    {
+        return $this->_natureKidFriendly;
+    }
+    public function setNatureKidFriendly($yesOrNo)
+    {
+        $this->_natureKidFriendly = $yesOrNo;
+    }
+
+    public function getNatureFree()
+    {
+        return $this->_natureFree;
+    }
+    public function setNatureFree($yesOrNo)
+    {
+        $this->_natureFree = $yesOrNo;
     }
 
 }

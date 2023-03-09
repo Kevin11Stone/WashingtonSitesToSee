@@ -5,21 +5,31 @@
 class Music extends Destination
 {
     // private fields
-    private $_genre; // type of music: classical, pop, etc.
-
+    private $_music; // concerts
+    private $_musicFree; // is it free?
 
     function __construct()
     {
-        $this->_genre = "";
+        $this->_music = "";
+        $this->_musicFree = "";
     }
 
-    public function getGenre()
+    public function getMusic()
     {
-        return $this->_genre;
+        return $this->_music;
     }
-    public function setGenre($genre)
+    public function setMusic($music)
     {
-        $this->_genre = $genre;
+        $this->_music = $music;
     }
 
+
+    public function getMusicFree()
+    {
+        return $this->_musicFree;
+    }
+    public function setMusicFree($yesOrNo)
+    {
+        $this->_musicFree = $yesOrNo;
+    }
 }
