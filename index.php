@@ -65,6 +65,11 @@ $f3->route('GET|POST /activities', function () {
     $GLOBALS['con']->activities();
 });
 
+// Define a default route (328/wishlist)
+$f3->route('GET|POST /wishlist', function () {
+    $GLOBALS['con']->wishlist();
+});
+
 // run Fat Free
 $f3->run();
 

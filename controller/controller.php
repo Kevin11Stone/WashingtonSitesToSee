@@ -128,4 +128,9 @@ class Controller
         $view = new Template();
         echo $view->render('views/activities.html');
     }
+    function wishlist() {
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/wishlist.html');
+    }
 }
