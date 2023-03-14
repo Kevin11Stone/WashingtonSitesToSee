@@ -60,13 +60,14 @@ class DataLayer
         //4. Execute the query
         $statement->execute();
 
+
         //5. Process the results
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 // need to figure out how to display DATABASE info
-//        foreach ( $result as $row ) {
-//            echo "<h1>" . $row['name'] . ", " . $row['description'] . "</h1>" . "<br>";
-//        }
+        foreach ( $result as $row ) {
+            echo "<h1>" . $row['name'] . ", " . $row['description'] . "</h1>" . "<br>";
+        }
     }
 
 }
