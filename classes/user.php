@@ -65,10 +65,10 @@ class User
     }
     public function getDestinationList()
     {
-        foreach ($this->_destinationList as &$destinationObject) {
-            echo"- " . $destinationObject->getName() . "<br>";
-        }
-        //return $this->_destinationList;
+//        foreach ($this->_destinationList as &$destinationObject) {
+//            echo"- " . $destinationObject->getName() . "<br>";
+//        }
+        return $this->_destinationList;
     }
     // this array encompasses Destination objects
     public function setDestinationList($destinationObject)
@@ -91,10 +91,10 @@ class User
             };
         }
 
-        foreach ($_foodList as &$foodObject) {
-            echo"- " . $foodObject->getName() . "<br>";
-        }
-        //return $_foodList;
+//        foreach ($_foodList as &$foodObject) {
+//            echo"- " . $foodObject->getName() . "<br>";
+//        }
+        return $_foodList;
     }
     public function getNatureList()
     {
@@ -105,10 +105,10 @@ class User
             };
         }
 
-        foreach ($_natureList as &$natureObject) {
-            echo"- " . $natureObject->getName() . "<br>";
-        }
-        //return $_natureList;
+//        foreach ($_natureList as &$natureObject) {
+//            echo"- " . $natureObject->getName() . "<br>";
+//        }
+        return $_natureList;
     }
     public function getActivityList()
     {
@@ -118,10 +118,10 @@ class User
                 $_activityList[] = $destinationObject;
             };
         }
-        foreach ($_activityList as &$activityObject) {
-            echo"- " . $activityObject->getName() . "<br>";
-        }
-        //return $_activityList;
+//        foreach ($_activityList as &$activityObject) {
+//            echo"- " . $activityObject->getName() . "<br>";
+//        }
+        return $_activityList;
     }
 
     public function getMusicList()
@@ -132,10 +132,10 @@ class User
                 $_musicList[] = $destinationObject;
             };
         }
-        foreach ($_musicList as &$musicObject) {
-            echo"- " . $musicObject->getName() . "<br>";
-        }
-        //return $_musicList;
+//        foreach ($_musicList as &$musicObject) {
+//            echo"- " . $musicObject->getName() . "<br>";
+//        }
+        return $_musicList;
     }
 
 }

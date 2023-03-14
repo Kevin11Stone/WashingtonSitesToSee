@@ -11,6 +11,8 @@ class Controller
 
     function home()
     {
+        echo var_dump($_SESSION);
+
         if( !isset($_SESSION['newUser']) ) {
             // create User object upon viewing home page
             $newUser = new User();
@@ -19,6 +21,11 @@ class Controller
 
         $view = new Template();
         echo $view->render("views/home.html");
+    }
+
+    function contact() {
+        $view = new Template();
+        echo $view->render("views/contact.html");
     }
 
     function music()
@@ -34,7 +41,7 @@ class Controller
             // for each food selected, create new nature object and add it to the User's
             // destination list
             foreach ($musicNameArray as $musicName) {
-                $newDestinationToAdd = new Music();
+                $newDestinationToAdd = new Destination();
                 $newDestinationToAdd->setName($musicName);
                 $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
             }
@@ -63,7 +70,7 @@ class Controller
             // for each food selected, create new Food object and add it to the User's
             // destination list
             foreach ($foodNameArray as $foodName) {
-                $newDestinationToAdd = new Food();
+                $newDestinationToAdd = new Destination();
                 $newDestinationToAdd->setName($foodName);
                 $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
             }
@@ -93,7 +100,7 @@ class Controller
             // for each food selected, create new music object and add it to the User's
             // destination list
             foreach ($natureNameArray as $natureName) {
-                $newDestinationToAdd = new Nature();
+                $newDestinationToAdd = new Destination();
                 $newDestinationToAdd->setName($natureName);
                 $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
             }
@@ -121,7 +128,7 @@ class Controller
             // for each food selected, create new music object and add it to the User's
             // destination list
             foreach ($activityNameArray as $activityName) {
-                $newDestinationToAdd = new Activity();
+                $newDestinationToAdd = new Destination();
                 $newDestinationToAdd->setName($activityName);
                 $_SESSION['newUser']->setDestinationList($newDestinationToAdd);
             }
@@ -137,16 +144,21 @@ class Controller
 
     function wishlist()
     {
-        // test vardump that we'll delete
-//        echo "<pre>";
-//        var_dump($_SESSION);
-//        echo "</pre>";
+        echo var_dump($_SESSION['newUser']->getDestinationList());
+
+
+        $wishList = $_SESSION['newUser']->getDestinationList();
+        // for each destination in destinationList, save it to database
+        foreach ($wishList as &$destination) {
+            $GLOBALS['dataLayer']->saveDestination($destination);
+        }
+
+        // destroy Session array
+        session_destroy();
 
         // Instantiate a view
         $view = new Template();
         echo $view->render('views/wishlist.html');
 
-        // destroy Session array
-        //session_destroy();
     }
 }

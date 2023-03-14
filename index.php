@@ -1,5 +1,6 @@
 <?php
 // turn on error reporting
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 // require autoload file
@@ -13,6 +14,9 @@ $f3 = Base::instance();
 
 //instantiate a Controller object
 $con = new Controller($f3);
+
+$dataLayer = new DataLayer();
+
 
 // define a default route (328/home)
 $f3->route('GET /', function () {
@@ -37,9 +41,8 @@ $f3->route('GET|POST /about', function () {
 
 // Define a default route (328/contact)
 $f3->route('GET|POST /contact', function () {
-    // Instantiate a view
-    $view = new Template();
-    echo $view->render('views/contact.html');
+    $GLOBALS['con']->contact();
+
 });
 
 // Define a default route (328/sign-in)

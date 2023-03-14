@@ -10,6 +10,7 @@ class Destination
     private $_streetAddress;
     private $_city;
     private $_zipCode;
+    private $_state;
 
     // constructor
     function __construct()
@@ -52,6 +53,14 @@ class Destination
     public function setCity($city)
     {
         $this->_city = $city;
+    }
+    public function getState()
+    {
+        return $this->_state;
+    }
+    public function setState($state)
+    {
+        $this->_state = $state;
     }
     public function getZipCode()
     {
