@@ -32,14 +32,12 @@ class DataLayer
         $description = $destinationObj->getDescription();
         $address = $destinationObj->getStreetAddress();
         $city = $destinationObj->getCity();
-        //$state = $destinationObj->getState();
         $zipCode= $destinationObj->getZipCode();
 
         $statement->bindParam(':name', $name);
         $statement->bindParam(':description', $description);
         $statement->bindParam(':address', $address);
         $statement->bindParam(':city', $city);
-        //$statement->bindParam(':state', $state);
         $statement->bindParam(':zipCode', $zipCode);
 
         //4. Execute the query
@@ -52,7 +50,7 @@ class DataLayer
     function getDestinations()
     {
         //1. Define the query
-        $sql = "SELECT * FROM destinations";
+        $sql = "SELECT * FROM `destinations`";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);

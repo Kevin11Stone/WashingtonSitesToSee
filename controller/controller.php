@@ -38,7 +38,7 @@ class Controller
                 implode(", ",$_POST['musicNames']) : "";
             $musicNameArray = explode(", ", $musicNameString);
 
-            // for each food selected, create new nature object and add it to the User's
+            // for each destination selected, create new destination object and add it to the User's
             // destination list
             foreach ($musicNameArray as $musicName) {
                 $newDestinationToAdd = new Destination();
@@ -144,21 +144,20 @@ class Controller
 
     function wishlist()
     {
-        echo var_dump($_SESSION['newUser']->getDestinationList());
-
-
         $wishList = $_SESSION['newUser']->getDestinationList();
         // for each destination in destinationList, save it to database
         foreach ($wishList as &$destination) {
             $GLOBALS['dataLayer']->saveDestination($destination);
         }
 
+        echo $GLOBALS['dataLayer']->getDestinations();
+
         // destroy Session array
         session_destroy();
 
         // Instantiate a view
         $view = new Template();
-        echo $view->render('views/wishlist.html');
+        echo $view->render('views/wishlist.php');
 
     }
 }

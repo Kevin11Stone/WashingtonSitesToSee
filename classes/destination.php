@@ -54,17 +54,9 @@ class Destination
     {
         $this->_city = $city;
     }
-    public function getState()
-    {
-        return $this->_state;
-    }
-    public function setState($state)
-    {
-        $this->_state = $state;
-    }
     public function getZipCode()
     {
-        return $this->_name;
+        return $this->_zipCode;
     }
     public function setZipCode($zipCode)
     {

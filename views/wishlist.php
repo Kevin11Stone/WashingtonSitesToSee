@@ -9,7 +9,7 @@
 </h2>
 
 <label>
-
+    <?php echo DataLayer::getDestinations() ?>
 
 </label>
 
