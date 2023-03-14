@@ -150,7 +150,7 @@ class Controller
             $GLOBALS['dataLayer']->saveDestination($destination);
         }
 
-        echo $GLOBALS['dataLayer']->getDestinations();
+        $GLOBALS['dataLayer']->getDestinations();
 
         // destroy Session array
         session_destroy();
