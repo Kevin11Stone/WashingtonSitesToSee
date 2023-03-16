@@ -147,7 +147,10 @@ class Controller
         $wishList = $_SESSION['newUser']->getDestinationList();
         // for each destination in destinationList, save it to database
         foreach ($wishList as &$destination) {
-            $GLOBALS['dataLayer']->saveDestination($destination);
+            $destinationName = $destination->getName();
+            if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == true){
+                $GLOBALS['dataLayer']->saveDestination($destination);
+            }
         }
         $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
         $this->_f3->set('destinations', $destinationsInDatabase);

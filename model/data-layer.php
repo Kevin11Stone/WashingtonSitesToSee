@@ -18,6 +18,30 @@ class DataLayer
         }
     }
 
+    function checkIfDestinationIsInDatabase($destinationName)
+    {
+        // if destination name is already in database, return True
+        //1. Define the query
+        $sql = "SELECT * FROM `destinations` WHERE name = ?";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':name', $destinationName);
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. process the results
+        if( $statement->fetchAll(PDO::FETCH_ASSOC) != null){
+            return false;
+        };
+
+        // destination name is not in database
+        return true;
+    }
+
     function saveDestination($destinationObj)
     {
         //1. Define the query
