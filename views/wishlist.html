@@ -1,0 +1,23 @@
+
+<include href="views/header.html"></include>
+
+<div class="container fluid">
+    <h1>My Wish List</h1>
+    <table>
+        <tr>
+            <th><strong>Name</strong></th>
+
+        </tr>
+        <repeat group="{{ @destinations }}" value="{{ @destination }}">
+            <tr>
+                <td>{{ @destination['name'] }}<br></td>
+            </tr>
+        </repeat>
+    </table>
+
+</div>
+
+
+
+<!-- FOOTER -->
+    <include href="views/footer.html"></include>

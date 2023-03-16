@@ -149,15 +149,16 @@ class Controller
         foreach ($wishList as &$destination) {
             $GLOBALS['dataLayer']->saveDestination($destination);
         }
-
-        $GLOBALS['dataLayer']->getDestinations();
+        $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
+        $this->_f3->set('destinations', $destinationsInDatabase);
+        //$GLOBALS['dataLayer']->getDestinations();
 
         // destroy Session array
         session_destroy();
 
         // Instantiate a view
         $view = new Template();
-        echo $view->render('views/wishlist.php');
+        echo $view->render('views/wishlist.html');
 
     }
 }
