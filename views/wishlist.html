@@ -1,22 +1,25 @@
 
 <include href="views/header.html"></include>
 
-<div class="container fluid">
-    <h1>My Wish List</h1>
-    <table>
-        <tr>
-            <th><strong>Name</strong></th>
+    <h1>My Itinerary</h1>
 
-        </tr>
-        <repeat group="{{ @destinations }}" value="{{ @destination }}">
+    <form action="#">
+
+        <table>
             <tr>
-                <td>{{ @destination['name'] }}<br></td>
+                <th><strong>Destination Name</strong></th>
             </tr>
-        </repeat>
-    </table>
+            <repeat group="{{ @destinations }}" value="{{ @destination }}">
 
-</div>
+                <tr>
+                    <input type="checkbox" id="{{ @destination }}" name="{{ @destination }}" value="{{ @destination }}">
+                    <label for="{{ @destination }}"> {{ @destination['name'] }}</label><br>                </tr>
+            </repeat>
+        </table>
 
+
+        <input type="submit" value="Submit">
+    </form>
 
 
 <!-- FOOTER -->
