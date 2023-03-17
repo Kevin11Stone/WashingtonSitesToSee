@@ -63,6 +63,14 @@ class User
     {
         $this->_state = $state;
     }
+
+    public function deleteDestinationFromList($destinationName) {
+        foreach ($this->_destinationList as $key => $value){
+            if ($value == $destinationName) {
+                unset($this->_destinationList[$key]);
+            }
+        }
+    }
     public function getDestinationList()
     {
 //        foreach ($this->_destinationList as &$destinationObject) {
