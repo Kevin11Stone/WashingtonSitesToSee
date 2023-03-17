@@ -151,7 +151,7 @@ class Controller
         // for each destination in destinationList, save it to database
         foreach ($wishList as &$destination) {
             $destinationName = $destination->getName();
-            if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == true){
+            if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName)){
                 $GLOBALS['dataLayer']->saveDestination($destination);
             }
         }
@@ -160,25 +160,25 @@ class Controller
         //$GLOBALS['dataLayer']->getDestinations();
 
 
-//        //If the form has been submitted
-//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//
-//            // delete destination
-//            $destinationNamesString  = isset($_POST['destinationNames']) ?
-//                implode(", ",$_POST['destinationNames']) : "";
-//            $destinationNamesArray = explode(", ", $destinationNamesString);
-//
-//            // for each destination selected, delete it from the database
-//            foreach ($destinationNamesArray as $destinationName) {
-//                deleteDestinationFromDatabase($destinationName->getName());
-//            }
-//
-//            //Redirect to Itinerary page
-//            $this->_f3->reroute('wishlist');
-//        }
+        //If the form has been submitted
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // delete destination
+            $destinationNamesString  = isset($_POST['destinationNames']) ?
+                implode(", ",$_POST['destinationNames']) : "";
+            $destinationNamesArray = explode(", ", $destinationNamesString);
+
+            // for each destination selected, delete it from the database
+            foreach ($destinationNamesArray as $destinationName) {
+                deleteDestinationFromDatabase($destinationName->getName());
+            }
+
+            //Redirect to Itinerary page
+            $this->_f3->reroute('wishlist');
+        }
 
         // destroy Session array
-        session_destroy();
+        //session_destroy();
 
         // Instantiate a view
         $view = new Template();

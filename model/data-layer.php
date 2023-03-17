@@ -40,7 +40,7 @@ class DataLayer
     {
         // if destination name is already in database, return True
         //1. Define the query
-        $sql = "SELECT * FROM `destinations` WHERE name = ?";
+        $sql = "SELECT * FROM `destinations` WHERE name =";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -52,11 +52,11 @@ class DataLayer
         $statement->execute();
 
         //5. process the results
-        if( $statement->fetchAll(PDO::FETCH_ASSOC) != null){
+        if( $statement->fetchAll(PDO::FETCH_ASSOC) == null){
             return false;
         };
 
-        // destination name is not in database
+        // destination name is in database
         return true;
     }
 

@@ -12,7 +12,7 @@
             <repeat group="{{ @destinations }}" value="{{ @destination }}">
 
                 <tr>
-                    <input type="checkbox" id="{{ @destination }}" name="destinationNames" value="{{ @destination }}">
+                    <input type="checkbox" id="{{ @destination }}" name="destinationNames[]" value="{{ @destination }}">
                     <label for="{{ @destination }}"> {{ @destination['name'] }}</label><br>                </tr>
             </repeat>
         </table>
