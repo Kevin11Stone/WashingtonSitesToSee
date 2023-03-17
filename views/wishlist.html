@@ -12,13 +12,13 @@
             <repeat group="{{ @destinations }}" value="{{ @destination }}">
 
                 <tr>
-                    <input type="checkbox" id="{{ @destination }}" name="{{ @destination }}" value="{{ @destination }}">
+                    <input type="checkbox" id="{{ @destination }}" name="destinationNames" value="{{ @destination }}">
                     <label for="{{ @destination }}"> {{ @destination['name'] }}</label><br>                </tr>
             </repeat>
         </table>
 
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Delete">
     </form>
 
 

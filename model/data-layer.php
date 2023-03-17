@@ -18,6 +18,24 @@ class DataLayer
         }
     }
 
+    function deleteDestinationFromDatabase($destinationName)
+    {
+        //1. Define the query
+        $sql = "DELETE FROM `destinations` WHERE name = ?";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':name', $destinationName);
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. process the results
+
+    }
+
     function checkIfDestinationIsInDatabase($destinationName)
     {
         // if destination name is already in database, return True

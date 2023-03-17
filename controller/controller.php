@@ -24,6 +24,8 @@ class Controller
     }
 
     function contact() {
+
+        session_destroy();
         $view = new Template();
         echo $view->render("views/contact.html");
     }
@@ -144,6 +146,7 @@ class Controller
 
     function wishlist()
     {
+        // display destinations in Itinerary List
         $wishList = $_SESSION['newUser']->getDestinationList();
         // for each destination in destinationList, save it to database
         foreach ($wishList as &$destination) {
@@ -155,6 +158,24 @@ class Controller
         $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
         $this->_f3->set('destinations', $destinationsInDatabase);
         //$GLOBALS['dataLayer']->getDestinations();
+
+
+//        //If the form has been submitted
+//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//
+//            // delete destination
+//            $destinationNamesString  = isset($_POST['destinationNames']) ?
+//                implode(", ",$_POST['destinationNames']) : "";
+//            $destinationNamesArray = explode(", ", $destinationNamesString);
+//
+//            // for each destination selected, delete it from the database
+//            foreach ($destinationNamesArray as $destinationName) {
+//                deleteDestinationFromDatabase($destinationName->getName());
+//            }
+//
+//            //Redirect to Itinerary page
+//            $this->_f3->reroute('wishlist');
+//        }
 
         // destroy Session array
         session_destroy();
