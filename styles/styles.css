@@ -82,3 +82,15 @@ ul.activities li a {
 .right {
     padding: 0 0 0 50px;
 }
+
+/* ABOUT US page */
+.aboutUs {
+    text-align: center;
+}
+.aboutUs .row {
+    display: flex;
+}
+.aboutUs .column {
+    flex: 33.33%;
+    padding: 5px;
+}

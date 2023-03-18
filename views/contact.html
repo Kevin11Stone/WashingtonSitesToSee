@@ -1,10 +1,25 @@
 <!-- contact route -> views/contact-->
 <include href="views/header.html"></include>
 
+<div class="container text-center contactUs">
+    <h2>Leave us a comment!</h2>
 
+    <div>
+        <label for="firstName">First Name</label>
+        <br><input type="text" name="firstName" id="firstName">
 
-<!-- content here CREATE unique id for style purposes-->
+        <br><label for="lastName">Last Name</label>
+        <br><input type="text" name="lastName" id="lastName">
 
+        <br><label for="email">email</label>
+        <br><input type="email" name="email" id="email">
+
+        <br><label for="comment">Leave us a comment</label>
+        <br><textarea class="comment" name="comment" id="comment"></textarea>
+
+        <br><input type="submit" name="submitInfo" value="Submit">
+    </div>
+</div>
 
 <!-- FOOTER -->
 <include href="views/footer.html"></include>
