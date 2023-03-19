@@ -1,39 +1,43 @@
 <!-- sign-in route -> views/sign-in.html-->
 <include href="views/header.html"></include>
 
-<div id="signinClass">
+<div class="container signIn">
+    <h2 class="text-center">SIGN IN</h2>
+
     <div class="row">
 <!--        sign in side and submit-->
-        <div class="left col-md-6 col-sm-12">
-            <h3>SIGN IN</h3>
-            <label for="username">email</label>
-            <br><input type="email" name="username" id="username">
+        <label for="username">email</label>
+        <br><input type="email" name="username" id="username">
 
-            <br><label for="userpwd">password</label>
-            <br><input type="password" name="userpwd" id="userpwd">
+        <br><label for="userpwd">password</label>
+        <br><input type="password" name="userpwd" id="userpwd">
 
-            <h6>Forgot password or username?</h6>
+        <h6>Forgot password or username?</h6>
 
-            <button class="btn btn-primary" type="submit" href="experience">Log In</button>
-        </div>
+        <button  type="submit" class="logInbtn btn-primary" href="experience">Log In</button><br>
+        <button  type="submit" class="signUpbtn btn-primary" id="signUpbtn" onclick="document.getElementById('myModal').style.display='block'">Sign Up</button>
 
-        <div class="right col-md-6 col-sm-12">
-            <h3>SIGN UP</h3>
-            <label for="firstName">First Name</label>
-            <br><input type="text" name="firstName" id="firstName">
+        <hr>
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <span class='close' onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 
-            <br><label for="lastName">Last Name</label>
-            <br><input type="text" name="lastName" id="lastName">
+                <h3>SIGN UP</h3>
+                <label for="firstName">First Name</label><br>
+                <input type="text" name="firstName" id="firstName"><br>
 
-            <br><label for="email">email</label>
-            <br><input type="email" name="email" id="email">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName">
 
-            <br><label for="password">password</label>
-            <br><input type="password" name="password" id="password">
+                <br><label for="email">email</label>
+                <br><input type="email" name="email" id="email">
 
-<!--            <br><a class="button" type="button" href="">Sign Up!</a>-->
-            <br><button class="btn btn-primary" type="submit" href="experience">Sign Up</button>
+                <br><label for="password">password</label>
+                <br><input type="password" name="password" id="password">
 
+                <!--            <br><a class="button" type="button" href="">Sign Up!</a>-->
+                <br><button class="btn btn-primary" type="submit" href="experience">Sign Up</button>
+            </div>
         </div>
     </div>
 </div>
