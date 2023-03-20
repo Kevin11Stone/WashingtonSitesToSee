@@ -45,6 +45,12 @@ $f3->route('GET|POST /contact', function () {
 
 });
 
+// Define a default route (328/delete)
+$f3->route('GET|POST /delete', function () {
+    $GLOBALS['con']->delete();
+
+});
+
 // Define a default route (328/sign-in)
 $f3->route('GET|POST /signin', function () {
     // Instantiate a view

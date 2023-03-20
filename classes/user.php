@@ -65,11 +65,10 @@ class User
     }
 
     public function deleteDestinationFromList($destinationName) {
-        foreach ($this->_destinationList as $key => $value){
-            if ($value == $destinationName) {
-                unset($this->_destinationList[$key]);
-            }
+        foreach (array_keys($this->_destinationList, $destinationName) as $key){
+            unset($this->_destinationList[$key]);
         }
+        return $this->_destinationList;
     }
     public function getDestinationList()
     {

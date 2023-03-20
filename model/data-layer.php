@@ -21,7 +21,7 @@ class DataLayer
     function deleteDestinationFromDatabase($destinationName)
     {
         //1. Define the query
-        $sql = "DELETE FROM `destinations` WHERE name = ?";
+        $sql = "DELETE FROM `destinations` WHERE name = '{$destinationName}'";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -36,11 +36,28 @@ class DataLayer
 
     }
 
+    function getDestinationByName($name){
+        //1. Define the query
+        $sql = "SELECT 1 * FROM `destinations` WHERE name = '{$name}'";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':name', $name);
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function checkIfDestinationIsInDatabase($destinationName)
     {
         // if destination name is already in database, return True
         //1. Define the query
-        $sql = "SELECT * FROM `destinations` WHERE name = ?";
+        $sql = "SELECT * FROM `destinations` WHERE name = '{$destinationName}'";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);

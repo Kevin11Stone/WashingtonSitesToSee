@@ -11,7 +11,7 @@ class Controller
 
     function home()
     {
-        echo var_dump($_SESSION);
+        echo '<pre>' , var_dump($_SESSION) , '</pre>';
 
         if( !isset($_SESSION['newUser']) ) {
             // create User object upon viewing home page
@@ -25,10 +25,20 @@ class Controller
 
     function contact() {
 
-        session_destroy();
+        echo '<pre>' , var_dump($_SESSION) , '</pre>';
+
         $view = new Template();
         echo $view->render("views/contact.html");
     }
+
+    function delete() {
+
+        echo '<pre>' , var_dump($_SESSION) , '</pre>';
+
+        $view = new Template();
+        echo $view->render("views/delete.html");
+    }
+
 
     function music()
     {
@@ -146,21 +156,25 @@ class Controller
 
     function wishlist()
     {
+
+        echo '<pre>' , var_dump($_SESSION) , '</pre>';
+
         // display destinations in Itinerary List
         $wishList = $_SESSION['newUser']->getDestinationList();
         // for each destination in destinationList, save it to database
         foreach ($wishList as &$destination) {
             $destinationName = $destination->getName();
-            //if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName)){
+            if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == false){
                 $GLOBALS['dataLayer']->saveDestination($destination);
-            //}
+            }
+            if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == true){
+                $_SESSION['newUser']->deleteDestinationFromList($destinationName);            }
         }
         $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
         $this->_f3->set('destinations', $destinationsInDatabase);
         //$GLOBALS['dataLayer']->getDestinations();
 
-
-        //If the form has been submitted
+//If the form has been submitted
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // delete destination
@@ -170,12 +184,13 @@ class Controller
 
             // for each destination selected, delete it from the database
             foreach ($destinationNamesArray as $destinationName) {
-                deleteDestinationFromDatabase($destinationName->getName());
+                $_SESSION['newUser']->deleteDestinationFromList($destinationName);
             }
 
             //Redirect to Itinerary page
-            $this->_f3->reroute('wishlist');
+            $this->_f3->reroute('delete');
         }
+
 
         // destroy Session array
         //session_destroy();
