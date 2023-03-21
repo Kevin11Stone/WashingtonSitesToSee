@@ -195,7 +195,7 @@ class Controller
 
             // for each destination selected, delete it from the database
             foreach ($destinationNamesArray as $destinationName) {
-                $_SESSION['newUser']->deleteDestinationFromList();
+                $_SESSION['newUser']->deleteDestinationFromList($destinationName);
                 $GLOBALS['dataLayer']->deleteDestinationFromDatabase($destinationName);
             }
 
