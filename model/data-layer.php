@@ -21,7 +21,7 @@ class DataLayer
     function deleteDestinationFromDatabase($destinationName)
     {
         //1. Define the query
-        $sql = "DELETE FROM `destinations` WHERE name = '{$destinationName}'";
+        $sql = "DELETE FROM `destinations` WHERE name = '$destinationName'";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -77,6 +77,22 @@ class DataLayer
             return false;
         }
 
+    }
+
+    function truncateTable()
+    {
+        //1. Define the query
+        $sql = "DELETE FROM `destinations` WHERE `name` IS NOT NULL";
+
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+
+
+        //4. Execute the query
+        $statement->execute();
     }
 
     function saveDestination($destinationObj)

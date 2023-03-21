@@ -35,6 +35,17 @@ class Controller
 
         echo '<pre>' , var_dump($_SESSION) , '</pre>';
 
+        // display destinations in Itinerary List
+        $wishList = $_SESSION['newUser']->getDestinationList();
+        $GLOBALS['dataLayer']->truncateTable();
+
+
+        foreach ($wishList as &$destination) {
+            $GLOBALS['dataLayer']->saveDestination($destination);
+        }
+        $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
+        $this->_f3->set('destinations', $destinationsInDatabase);
+
         $view = new Template();
         echo $view->render("views/delete.html");
     }
@@ -184,8 +195,10 @@ class Controller
 
             // for each destination selected, delete it from the database
             foreach ($destinationNamesArray as $destinationName) {
-                $_SESSION['newUser']->deleteDestinationFromList($destinationName);
+                $_SESSION['newUser']->deleteDestinationFromList();
+                $GLOBALS['dataLayer']->deleteDestinationFromDatabase($destinationName);
             }
+
 
             //Redirect to Itinerary page
             $this->_f3->reroute('delete');
