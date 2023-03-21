@@ -66,6 +66,9 @@ ul.activities li a {
 #itineraryLink {
     background-color: grey;
 }
+#aboutInNavBar {
+    padding-right: 22%;
+}
 /* SIGN-IN web page */
 .signIn h2{
     font-family: 'Quicksand', sans-serif;
