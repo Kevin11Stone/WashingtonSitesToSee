@@ -25,7 +25,9 @@ class Controller
 
     function contact() {
 
-        echo '<pre>' , var_dump($_SESSION) , '</pre>';
+        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
+        //session_destroy();
+
 
         $view = new Template();
         echo $view->render("views/contact.html");
@@ -45,6 +47,8 @@ class Controller
         }
         $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
         $this->_f3->set('destinations', $destinationsInDatabase);
+
+        //session_destroy();
 
         $view = new Template();
         echo $view->render("views/delete.html");
@@ -179,7 +183,9 @@ class Controller
                 $GLOBALS['dataLayer']->saveDestination($destination);
             }
             if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == true){
-                $_SESSION['newUser']->deleteDestinationFromList($destinationName);            }
+                //$GLOBALS['dataLayer']->deleteDestinationFromDatabase($destination);
+                //$_SESSION['newUser']->deleteDestinationFromList($destinationName);
+            }
         }
         $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
         $this->_f3->set('destinations', $destinationsInDatabase);
@@ -196,7 +202,7 @@ class Controller
             // for each destination selected, delete it from the database
             foreach ($destinationNamesArray as $destinationName) {
                 $_SESSION['newUser']->deleteDestinationFromList($destinationName);
-                $GLOBALS['dataLayer']->deleteDestinationFromDatabase($destinationName);
+                //$GLOBALS['dataLayer']->deleteDestinationFromDatabase($destinationName);
             }
 
 

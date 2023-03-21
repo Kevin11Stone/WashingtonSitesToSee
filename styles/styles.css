@@ -63,6 +63,9 @@ ul.activities li a {
 #footer p {
     text-align: center;
 }
+#itineraryLink {
+    background-color: grey;
+}
 /* SIGN-IN web page */
 .signIn h2{
     font-family: 'Quicksand', sans-serif;
