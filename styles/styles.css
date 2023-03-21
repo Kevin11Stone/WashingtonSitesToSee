@@ -82,3 +82,13 @@ ul.activities li a {
 }
 /* CONTACT US page*/
 
+/*
+add to wishlist button on each category page
+ */
+#addToWishListButtonDiv {
+    padding-bottom: 2%;
+}
+
+#homePicturesDiv {
+    padding: 2%;
+}
