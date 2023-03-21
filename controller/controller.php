@@ -184,7 +184,7 @@ class Controller
             }
             if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == true){
                 //$GLOBALS['dataLayer']->deleteDestinationFromDatabase($destination);
-                //$_SESSION['newUser']->deleteDestinationFromList($destinationName);
+                $_SESSION['newUser']->deleteDestinationFromList($destinationName);
             }
         }
         $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
@@ -202,7 +202,7 @@ class Controller
             // for each destination selected, delete it from the database
             foreach ($destinationNamesArray as $destinationName) {
                 $_SESSION['newUser']->deleteDestinationFromList($destinationName);
-                //$GLOBALS['dataLayer']->deleteDestinationFromDatabase($destinationName);
+                $GLOBALS['dataLayer']->deleteDestinationFromDatabase($destinationName);
             }
 
 
