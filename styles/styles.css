@@ -72,7 +72,7 @@ ul.activities li a {
     position: relative;
     margin-top: 50px;
     margin-bottom: 50px;
-    background-color: #237723;
+    /*background-color: #237723;*/
     padding: 50px;
 }
 .signIn input {
@@ -107,15 +107,16 @@ ul.activities li a {
 }
 /* CONTACT US page*/
 .contact {
-    position: absolute;
-    float: left;
-    margin: 20px auto;
-    padding: 100px;
-    background: #125d9e;
     color: white;
+    background: #125d9e;
+    padding: 20px;
+}
+.contact ul {
+    text-decoration: none;
 }
 .message {
-    z-index: 9;
     text-align: center;
+    background: white;
+    padding: 20px;
 }
 
