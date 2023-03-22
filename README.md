@@ -10,7 +10,7 @@ Requirements:
 - 4. Data can be added and viewed in an intuitive manner.
 - 5. Project commit history stored in GitHub repository.
 - 6. Created multiple class objects utilizing inheritance relationships.
-- 7. 
-- 8. 
-- 9. 
+- 7. Followd PEAR standards discussed in class.
+- 8. Full server-side validation using PHP.
+- 9. Code is legible and intuitive throughout.
 - 10. Created a live, data-driven website utilizing the required resources.
