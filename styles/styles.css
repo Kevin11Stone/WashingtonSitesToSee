@@ -39,12 +39,8 @@ ul#top-nav li.right {
     ul#top-nav li {float: none;}
 }
 div.content {
-    /*padding-top: 100px;*/
-    /*border-radius: 20px;*/
-    position: relative;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 30px;
+    padding-top: 100px;
+    border-radius: 20px;
 }
 ul.activities {
     list-style-type: none;
@@ -67,36 +63,21 @@ ul.activities li a {
 #footer p {
     text-align: center;
 }
+#itineraryLink {
+    background-color: grey;
+}
+#aboutInNavBar {
+    padding-right: 22%;
+}
 /* SIGN-IN web page */
-.container { /*this applies to any class divs called container */
-    position: relative;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    /*background-color: #237723;*/
-    padding: 50px;
-}
-.signIn input {
-    text-align: center;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    margin: auto 0;
-}
-.signIn .right {
-    border-left: black solid 2px;
-}
-.right:after {
-    border-left: none;
-}
-.highlight {
-    color: dodgerblue;
-}
 .signIn h2{
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     letter-spacing: 2px;
  }
-
+.modal-content {
+    margin: 5% auto 15% auto;
+}
 /* ABOUT US page */
 .aboutUs .row {
     display: flex;
@@ -106,17 +87,42 @@ ul.activities li a {
     padding: 5px;
 }
 /* CONTACT US page*/
-.contact {
-    color: white;
-    background: #125d9e;
-    padding: 20px;
-}
-.contact ul {
-    text-decoration: none;
-}
-.message {
-    text-align: center;
-    background: white;
-    padding: 20px;
+
+/*
+add to wishlist button on each category page
+ */
+#addToWishListButtonDiv {
+    padding-bottom: 2%;
 }
 
+#homePicturesDiv {
+    padding: 2%;
+}
+.homePicture {
+    padding: .5%;
+}
+/*
+wishlist/itinerary page
+ */
+#wishlistForm {
+    padding: 2%;
+}
+
+/*#wishlistForm > label {*/
+/*    padding-bottom: 1%;*/
+/*    padding-left: .5% !important;*/
+/*}*/
+#myItineraryTitle {
+    padding-top: 2%;
+    padding-left: 2%;
+}
+/*
+delete page
+ */
+#deletePageTitle {
+    padding: 2%;
+}
+#deleteItineraryLink {
+    padding-left: 2%;
+    padding-bottom: 2%;
+}
