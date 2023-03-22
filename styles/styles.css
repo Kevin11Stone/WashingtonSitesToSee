@@ -65,15 +65,28 @@ ul.activities li a {
 }
 /* SIGN-IN web page */
 .container {
-    padding-top: 50px ;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #237723;
+    padding: 50px;
 }
 .signIn input {
     text-align: center;
     border-top-style: hidden;
-    background-color: lightgrey;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    background-color: rgb(215, 211, 211);
+    margin: auto 0;
 }
-.signIn #right {
+.signIn .right {
     border-left: black solid 2px;
+}
+.right:after {
+    border-left: none;
+}
+.highlight {
+    color: dodgerblue;
 }
 .signIn h2{
     font-family: 'Quicksand', sans-serif;
@@ -90,4 +103,16 @@ ul.activities li a {
     padding: 5px;
 }
 /* CONTACT US page*/
+.contact {
+    position: absolute;
+    /*border: black solid 2px;*/
+    float: left;
+    margin: 20px auto;
+    padding: 100px;
+    background: #125d9e;
+}
+.message {
+    z-index: 9;
+    text-align: center;
+}
 

@@ -1,21 +1,30 @@
 <!-- contact route -> views/contact-->
 <include href="views/header.html"></include>
 
-<div class="container text-center contactUs">
-    <h2>Leave us a comment!</h2>
+<div class="container contactUs">
+    <h2 class="text-center">Leave us a message</h2>
 
-    <div  class="row">
+    <div class="contact">
+        <h3>Contact Info</h3>
+        <ul>
+            <li>1221 D St NE<br>Auburn, WA 98002</li>
+            <li>lorem@ipsum.com</li>
+            <li>(253)833-9111</li>
+        </ul>
+    </div>
+
+    <div  class="message">
         <label for="firstName">First Name</label>
-        <br><input type="text" name="firstName" id="firstName">
+        <br><input type="text" name="firstName" id="firstName" placeholder="First Name">
 
         <br><label for="lastName">Last Name</label>
-        <br><input type="text" name="lastName" id="lastName">
+        <br><input type="text" name="lastName" id="lastName" placeholder="Last Name">
 
         <br><label for="email">email</label>
-        <br><input type="email" name="email" id="email">
+        <br><input type="email" name="email" id="email" placeholder="Email">
 
         <br><label for="comment">Leave us a comment</label>
-        <br><textarea class="comment" name="comment" id="comment"></textarea>
+        <br><textarea class="comment" name="comment" id="comment" placeholder="Write message here..."></textarea>
 
         <br><input type="submit" name="submitInfo" value="Submit">
     </div>

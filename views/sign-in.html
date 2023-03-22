@@ -5,8 +5,7 @@
     <form action="#" method="post" class="form-horizontal">
 
     <div class="row text-center">
-        <div class="col-md-6 col-sm-12">
-            <!--        sign in side and submit-->
+        <div class="left col-md-6 col-sm-12">
             <h3>SIGN IN</h3>
 
             <label for="username"></label>
@@ -14,13 +13,13 @@
 
             <br><label for="userpwd"></label>
             <br><input type="password" name="userpwd" id="userpwd" placeholder="password">
-            <br>
-            <h6>Forgot password or username?</h6>
 
-            <br><button  type="submit" class="logInbtn btn-primary" href="">Log In</button><br>
+            <h6 href="">Forgot password or username?</h6>
+
+            <button type="submit" class="btn btn-primary" href="">Log In</button><br>
         </div>
 
-        <div class="col-md-6  col-sm-12" id="right">
+        <div class="right col-md-6  col-sm-12">
             <h3>SIGN UP</h3>
             <label for="firstName"></label>
             <br><input type="text" name="firstName" id="firstName" placeholder="first name">
@@ -34,8 +33,10 @@
             <br><label for="password"></label>
             <br><input type="password" name="password" id="password" placeholder="password">
 
-            <!--            <br><a class="button" type="button" href="">Sign Up!</a>-->
-            <br><button class="btn btn-primary" type="submit" href="">Sign Up</button>
+            <br><input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+            <p>By creating an account you agree to our <a class="highlight">Terms & Privacy</a>.</p>
+
+            <button class="btn btn-primary" type="submit" href="">Sign Up</button>
         </div>
     </div>
     </form>
