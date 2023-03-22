@@ -64,9 +64,9 @@ class User
         $this->_state = $state;
     }
 
-    public function deleteDestinationFromList() {
-
-        unset($this->_destinationList[0]);
+    public function deleteDestinationFromList($destinationName) {
+        $key = array_search ($destinationName, $this->_destinationList);
+        unset($this->_destinationList[$key]);
 
     }
     public function getDestinationList()

@@ -2,45 +2,47 @@
 <include href="views/header.html"></include>
 
 <div class="container signIn">
-    <h2 class="text-center">SIGN IN</h2>
+    <form action="#" method="post" class="form-horizontal">
 
     <div class="row">
-<!--        sign in side and submit-->
-        <label for="username">email</label>
-        <br><input type="email" name="username" id="username">
+        <div class="left col-md-6  col-sm-12">
+            <!--        sign in side and submit-->
+            <h3>SIGN IN</h3>
 
-        <br><label for="userpwd">password</label>
-        <br><input type="password" name="userpwd" id="userpwd">
+            <label for="username">email</label>
+            <br><input type="email" name="username" id="username">
 
-        <h6>Forgot password or username?</h6>
+            <br><label for="userpwd">password</label>
+            <br><input type="password" name="userpwd" id="userpwd">
 
-        <button  type="submit" class="logInbtn btn-primary" href="experience">Log In</button><br>
-        <button  type="submit" class="signUpbtn btn-primary" id="signUpbtn" onclick="document.getElementById('myModal').style.display='block'">Sign Up</button>
+            <h6>Forgot password or username?</h6>
 
-        <hr>
-        <div class="modal" id="myModal">
-            <div class="modal-content">
-                <span class='close' onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+            <button  type="submit" class="logInbtn btn-primary" href="experience">Log In</button><br>
+            <button  type="submit" class="signUpbtn btn-primary" id="signUpBtn">Sign Up</button>
+        </div>
 
-                <h3>SIGN UP</h3>
-                <label for="firstName">First Name</label><br>
-                <input type="text" name="firstName" id="firstName"><br>
+        <div class="right col-md-6 col-sm-12">
+            <h3>SIGN UP</h3>
+            <label for="firstName">First Name</label>
+            <br><input type="text" name="firstName" id="firstName">
 
-                <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="lastName">
+            <br><label for="lastName">Last Name</label>
+            <br><input type="text" name="lastName" id="lastName">
 
-                <br><label for="email">email</label>
-                <br><input type="email" name="email" id="email">
+            <br><label for="email">email</label>
+            <br><input type="email" name="email" id="email">
 
-                <br><label for="password">password</label>
-                <br><input type="password" name="password" id="password">
+            <br><label for="password">password</label>
+            <br><input type="password" name="password" id="password">
 
-                <!--            <br><a class="button" type="button" href="">Sign Up!</a>-->
-                <br><button class="btn btn-primary" type="submit" href="experience">Sign Up</button>
-            </div>
+            <!--            <br><a class="button" type="button" href="">Sign Up!</a>-->
+            <br><button class="btn btn-primary" type="submit" href="experience">Sign Up</button>
         </div>
     </div>
+    </form>
+
 </div>
+
 
 <!-- FOOTER -->
 <include href="views/footer.html"></include>

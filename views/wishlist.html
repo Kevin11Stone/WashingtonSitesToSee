@@ -1,20 +1,32 @@
 
 <include href="views/header.html"></include>
 
-    <h1>My Itinerary</h1>
+    <h1 id="myItineraryTitle">My Itinerary</h1>
 
-    <form action="delete" method="post">
+    <form id="wishlistForm" action="delete" method="post">
 
-        <table>
-            <tr>
-                <th><strong>Destination Name</strong></th>
-            </tr>
+        <table class="table table-striped table-hover">
+
+            <thead>
+                <tr>
+                    <th scope="col">Destination Name</th>
+                </tr>
+            </thead>
+
+            <tbody>
             <repeat group="{{ @destinations }}" value="{{ @destination }}">
 
                 <tr>
-                    <input type="checkbox" id="{{ @destination }}" name="destinationNames[]" value="{{ @destination }}">
-                    <label for="{{ @destination }}"> {{ @destination['name'] }}</label><br>                </tr>
+                    <td>
+                        <input type="checkbox" id="{{ @destination }}" name="destinationNames[]" value="{{ @destination }}">
+                        <label for="{{ @destination }}"> {{ @destination['name'] }}</label>
+
+                    </td>
+
+                </tr>
             </repeat>
+
+            </tbody>
         </table>
 
 

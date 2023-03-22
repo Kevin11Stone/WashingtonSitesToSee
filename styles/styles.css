@@ -63,6 +63,12 @@ ul.activities li a {
 #footer p {
     text-align: center;
 }
+#itineraryLink {
+    background-color: grey;
+}
+#aboutInNavBar {
+    padding-right: 22%;
+}
 /* SIGN-IN web page */
 .signIn .column {
     float: left;
@@ -89,3 +95,42 @@ ul.activities li a {
 }
 /* CONTACT US page*/
 
+/*
+add to wishlist button on each category page
+ */
+#addToWishListButtonDiv {
+    padding-bottom: 2%;
+}
+
+#homePicturesDiv {
+    padding: 2%;
+}
+.homePicture {
+    padding: .5%;
+}
+
+/*
+wishlist/itinerary page
+ */
+#wishlistForm {
+    padding: 2%;
+}
+
+#wishlistForm > label {
+    padding-bottom: 1%;
+    padding-left: .5% !important;
+}
+#myItineraryTitle {
+    padding-top: 2%;
+    padding-left: 2%;
+}
+/*
+delete page
+ */
+#deletePageTitle {
+    padding: 2%;
+}
+#deleteItineraryLink {
+    padding-left: 2%;
+    padding-bottom: 2%;
+}
