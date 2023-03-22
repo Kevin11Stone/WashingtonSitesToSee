@@ -64,14 +64,21 @@ ul.activities li a {
     text-align: center;
 }
 /* SIGN-IN web page */
+.signIn .column {
+    float: left;
+    width: 50%;
+}
+.signIn.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .signIn h2{
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     letter-spacing: 2px;
  }
-.modal-content {
-    margin: 5% auto 15% auto;
-}
+
 /* ABOUT US page */
 .aboutUs .row {
     display: flex;
