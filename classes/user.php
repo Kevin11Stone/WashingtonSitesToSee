@@ -67,7 +67,7 @@ class User
     public function deleteDestinationFromList($destinationName) {
         $key = array_search ($destinationName, $this->_destinationList);
         unset($this->_destinationList[$key]);
-
+        $this->_destinationList = array_values($this->_destinationList);
     }
     public function getDestinationList()
     {

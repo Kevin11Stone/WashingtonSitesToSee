@@ -70,21 +70,14 @@ ul.activities li a {
     padding-right: 22%;
 }
 /* SIGN-IN web page */
-.signIn .column {
-    float: left;
-    width: 50%;
-}
-.signIn.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 .signIn h2{
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     letter-spacing: 2px;
  }
-
+.modal-content {
+    margin: 5% auto 15% auto;
+}
 /* ABOUT US page */
 .aboutUs .row {
     display: flex;
@@ -116,10 +109,10 @@ wishlist/itinerary page
     padding: 2%;
 }
 
-#wishlistForm > label {
-    padding-bottom: 1%;
-    padding-left: .5% !important;
-}
+/*#wishlistForm > label {*/
+/*    padding-bottom: 1%;*/
+/*    padding-left: .5% !important;*/
+/*}*/
 #myItineraryTitle {
     padding-top: 2%;
     padding-left: 2%;

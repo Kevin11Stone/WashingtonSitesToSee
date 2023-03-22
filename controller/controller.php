@@ -11,7 +11,7 @@ class Controller
 
     function home()
     {
-        echo '<pre>' , var_dump($_SESSION) , '</pre>';
+        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
 
         if( !isset($_SESSION['newUser']) ) {
             // create User object upon viewing home page
@@ -35,7 +35,7 @@ class Controller
 
     function delete() {
 
-        echo '<pre>' , var_dump($_SESSION) , '</pre>';
+        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
 
         // display destinations in Itinerary List
         $wishList = $_SESSION['newUser']->getDestinationList();
@@ -172,7 +172,7 @@ class Controller
     function wishlist()
     {
 
-        echo '<pre>' , var_dump($_SESSION) , '</pre>';
+        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
 
         // display destinations in Itinerary List
         $wishList = $_SESSION['newUser']->getDestinationList();
