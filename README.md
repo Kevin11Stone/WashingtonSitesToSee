@@ -18,4 +18,4 @@ Requirements:
 - 9. Code is legible and intuitive throughout.
 - 10. Created a live, data-driven website utilizing the required resources.
 
-![alt text](https://cdn.discordapp.com/attachments/1065426812433354856/1083101974385393734/image.png)
+![alt text](https://cdn.discordapp.com/attachments/1065426812433354856/1083101974385393734/image.png) example image 
