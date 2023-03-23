@@ -23,6 +23,10 @@
             <h3>SIGN UP</h3>
             <label for="firstName"></label>
             <br><input type="text" name="firstName" id="firstName" placeholder="first name">
+            <!--                check validation-->
+            <check if="{{ isset(@errors['firstName'])}}">
+                <span class="err">{{ @errors['firstName'] }}</span>
+            </check><br>
 
             <br><label for="lastName"></label>
             <br><input type="text" name="lastName" id="lastName" placeholder="last name">
@@ -36,7 +40,7 @@
             <br><input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
             <p>By creating an account you agree to our <a class="highlight">Terms & Privacy</a>.</p>
 
-            <button class="btn btn-primary" type="submit" href="">Sign Up</button>
+            <button class="btn btn-primary" type="submit" href="signup">Sign Up</button>
         </div>
     </div>
     </form>
