@@ -1,10 +1,12 @@
-Project: Washington Sites To See
-This website is based in the state of Washington. 
----
-SDEV328 - Full Stack Web Dev: Team Project ( data-driven web application )
+# Washington Sites To See
+This website is based in the state of Washington.
 
-Team: Scrummy Bears
-Authors: Kevin Stone, Michell Rodriguez and Junny Noriega-Arenas
+Authors
+-
+  - Kevin Stone 
+  - Michell Rodriguez
+  - Junny Noriega-Arenas
+
 
 Requirements:
 - 1. Utilized controller and model classes to separate database/business logic using the MVC pattern.
