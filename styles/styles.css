@@ -114,12 +114,20 @@ ul.activities li a {
 .contact ul {
     list-style-type: none;
 }
+.contact li {
+    padding: 5px;
+}
 .message {
     text-align: center;
     background: white;
     padding: 20px;
 }
-.contact:after {
+.message input {
     text-align: center;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    margin: auto 0;
 }
+
 

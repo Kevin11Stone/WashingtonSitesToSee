@@ -11,7 +11,7 @@ class Controller
 
     function home()
     {
-        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
+        echo var_dump($_SESSION);
 
         if( !isset($_SESSION['newUser']) ) {
             // create User object upon viewing home page
@@ -25,35 +25,10 @@ class Controller
 
     function contact() {
 
-        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
-        //session_destroy();
-
-
+        session_destroy();
         $view = new Template();
         echo $view->render("views/contact.html");
     }
-
-    function delete() {
-
-        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
-
-        // display destinations in Itinerary List
-        $wishList = $_SESSION['newUser']->getDestinationList();
-        $GLOBALS['dataLayer']->truncateTable();
-
-
-        foreach ($wishList as &$destination) {
-            $GLOBALS['dataLayer']->saveDestination($destination);
-        }
-        $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
-        $this->_f3->set('destinations', $destinationsInDatabase);
-
-        //session_destroy();
-
-        $view = new Template();
-        echo $view->render("views/delete.html");
-    }
-
 
     function music()
     {
@@ -171,27 +146,21 @@ class Controller
 
     function wishlist()
     {
-
-        //echo '<pre>' , var_dump($_SESSION) , '</pre>';
-
         // display destinations in Itinerary List
         $wishList = $_SESSION['newUser']->getDestinationList();
         // for each destination in destinationList, save it to database
         foreach ($wishList as &$destination) {
             $destinationName = $destination->getName();
-            if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == false){
+            //if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName)){
                 $GLOBALS['dataLayer']->saveDestination($destination);
-            }
-            if($GLOBALS['dataLayer']->checkIfDestinationIsInDatabase($destinationName) == true){
-                //$GLOBALS['dataLayer']->deleteDestinationFromDatabase($destination);
-                $_SESSION['newUser']->deleteDestinationFromList($destinationName);
-            }
+            //}
         }
         $destinationsInDatabase = $GLOBALS['dataLayer']->getDestinations();
         $this->_f3->set('destinations', $destinationsInDatabase);
         //$GLOBALS['dataLayer']->getDestinations();
 
-//If the form has been submitted
+
+        //If the form has been submitted
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // delete destination
@@ -201,15 +170,12 @@ class Controller
 
             // for each destination selected, delete it from the database
             foreach ($destinationNamesArray as $destinationName) {
-                $_SESSION['newUser']->deleteDestinationFromList($destinationName);
-                $GLOBALS['dataLayer']->deleteDestinationFromDatabase($destinationName);
+                deleteDestinationFromDatabase($destinationName->getName());
             }
 
-
             //Redirect to Itinerary page
-            $this->_f3->reroute('delete');
+            $this->_f3->reroute('wishlist');
         }
-
 
         // destroy Session array
         //session_destroy();
@@ -218,5 +184,43 @@ class Controller
         $view = new Template();
         echo $view->render('views/wishlist.html');
 
+    }
+
+    function signin()
+    {
+        // If the form has been submitted
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $firstName = trim($_POST['firstName']);
+            $lastName = trim($_POST['lastName']);
+            $email = trim($_POST['email']);
+            $password = trim($_POST['password']);
+
+
+            if(Validate::validFirstName($firstName) && Validate::validLastName($lastName) && Validate::validEmail($email) && Validate::validPassword($password)) {
+                $_SESSION['firstName'] = $firstName;
+                $_SESSION['lastName'] = $lastName;
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
+            }
+            else {
+                $this->_f3->set('errors["firstName"]',
+                    'must have at least 1 chars');
+                $this->_f3->set('errors["lastName"]',
+                    'must have at least 1 chars');
+                $this->_f3->set('errors["email"]',
+                    'invalid email');
+                $this->_f3->set('errors["password"]',
+                    'invalid password');
+            }
+
+            //Redirect to summary page
+            if (empty($this->_f3->get('errors'))) {
+                $this->_f3->reroute('signup');
+            }
+        }
+
+        // Instantiate a view
+        $view = new Template();
+        echo $view->render('views/sign-in.html');
     }
 }
