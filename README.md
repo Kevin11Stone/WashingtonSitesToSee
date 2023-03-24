@@ -1,5 +1,5 @@
 # Washington Sites To See
-This website 
+This web application is a website showcasing Washington State attractions. Upon choosing a particular destination, the page will populate with information associated with the choice (description, address, etc.). The user will have the ability to navigate to certain destinations based upon location and type of attraction (restaurants, beaches, etc.). The user will have the ability to add items to a list of destinations. This information can then be emailed to the user upon request. 
 
 ## Authors
   - Kevin Stone - Co-Founder/Developer
