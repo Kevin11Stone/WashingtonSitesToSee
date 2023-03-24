@@ -1,23 +1,35 @@
 # Washington Sites To See
-This website is based in the state of Washington.
+This website 
 
-Authors
--
-  - Kevin Stone 
-  - Michell Rodriguez
-  - Junny Noriega-Arenas
+## Authors
+  - Kevin Stone - Co-Founder/Developer
+  - Michell Rodriguez - Co-Founder/Developer
+  - Junny Noriega-Arenas - Co-Founder/Developer
 
 
-Requirements:
-- 1. Utilized controller and model classes to separate database/business logic using the MVC pattern.
-- 2. Routed page URL's using the Fat-Free Framework as instructed.
-- 3. Created a clearly defined database layer.
-- 4. Data can be added and viewed in an intuitive manner.
-- 5. Project commit history stored in GitHub repository.
-- 6. Created multiple class objects utilizing inheritance relationships.
-- 7. Followd PEAR standards discussed in class.
-- 8. Full server-side validation using PHP.
-- 9. Code is legible and intuitive throughout.
-- 10. Created a live, data-driven website utilizing the required resources.
+## Requirements:
+:heavy_check_mark: 1. Utilized controller and model classes to separate database/business logic using the MVC pattern.
 
-![alt text](https://cdn.discordapp.com/attachments/1065426812433354856/1083101974385393734/image.png) example image 
+:heavy_check_mark: 2. Routed page URL's using the Fat-Free Framework as instructed.
+
+:heavy_check_mark: 3. Created a clearly defined database layer.
+
+:heavy_check_mark: 4. Data can be added and viewed in an intuitive manner.
+
+:heavy_check_mark: 5. Project commit history stored in GitHub repository.
+
+:heavy_check_mark: 6. Created multiple class objects utilizing inheritance relationships.
+
+:heavy_check_mark: 7. Followd PEAR standards discussed in class.
+
+:heavy_check_mark: 8. Full server-side validation using PHP.
+
+:heavy_check_mark: 9. Code is legible and intuitive throughout.
+
+:heavy_check_mark: 10. Created a live, data-driven website utilizing the required resources.
+
+## UML Diagram
+![WaSitesToSee](https://user-images.githubusercontent.com/117204537/227428649-1246ac95-5a8b-4d69-9dae-dd31c26e729e.png)
+
+
+
