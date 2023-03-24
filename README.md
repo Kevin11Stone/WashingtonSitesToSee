@@ -29,7 +29,5 @@ This website
 :heavy_check_mark: 10. Created a live, data-driven website utilizing the required resources.
 
 ## UML Diagram
-![WaSitesToSee](https://user-images.githubusercontent.com/117204537/227428649-1246ac95-5a8b-4d69-9dae-dd31c26e729e.png)
-
-
+![waSitesToSee](https://user-images.githubusercontent.com/117204537/227432163-bd458938-bce2-473b-8d7c-c484a43b23d9.png)
 
